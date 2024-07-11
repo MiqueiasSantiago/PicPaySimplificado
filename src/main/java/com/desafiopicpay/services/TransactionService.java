@@ -30,7 +30,7 @@ public class TransactionService {
 	public void createTransaction(TransactionDTO transaction) throws Exception {
 		User sender = this.userService.findUserById(transaction.sanderId());
 		User receiver = this.userService.findUserById(transaction.receiverId());
-		
+		  
 		userService.validateTransaction(sender, transaction.value());
 	
 		boolean isAuthorized = this.authorizeTransaction(sender, transaction.value());
